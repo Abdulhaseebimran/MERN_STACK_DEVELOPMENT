@@ -1,15 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const Login = () => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+const Login = ({handleLogin}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const email = e.target.email.value
-    const password = e.target.password.value
-    console.log("Email" + email +  "password: " + password);
-  }
+    e.preventDefault();
+    handleLogin(email, password);
+    console.log("Email: " + e.target.email.value + " password: " + e.target.password.value);
+  };
   return (
     <div className='min-h-screen flex items-center justify-center'>
     <div className='bg-slate-900 p-8 rounded-lg shadow-lg w-full max-w-md border' style={{ borderColor: 'rgb(0, 255, 255)', borderWidth: '2px' }}>
@@ -27,7 +26,7 @@ const Login = () => {
             id="email" 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className='w-full mt-1 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent'
+            className='w-full mt-1 p-3 border border-gray-300 rounded-lg text-black font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent'
             placeholder="Enter your email" 
           />
         </div>
