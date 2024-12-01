@@ -3,8 +3,9 @@ import { AuthContext } from "../../context/AuthProvider";
 
 const AllTaskShow = () => {
   
-  const authData = useContext(AuthContext);
-  console.log(authData.employeesData);
+  // const authData = useContext(AuthContext);
+  // console.log(authData.employeesData);
+  const [userData, setUserData] = useContext(AuthContext);
   return (
     <div className="bg-[#1C1C1C] p-5 rounded mt-5 h-80 mb-5">
     <div className="bg-gradient-to-r from-purple-500 to-pink-500 mb-2 py-3 px-6 flex justify-between items-center rounded-lg shadow-lg">
@@ -16,7 +17,7 @@ const AllTaskShow = () => {
     </div>
 
     <div className="h-64 overflow-y-auto pb-4 hide-scrollbar">
-        {authData.employeesData.map((elem, index) => (
+        {userData.map((elem, index) => (
           <div 
             key={index} 
             className="bg-gray-800 mb-2 py-3 px-6 flex justify-between items-center rounded-lg shadow-md transform transition duration-300 hover:bg-gray-700 hover:shadow-lg"
