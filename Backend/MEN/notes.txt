@@ -7,3 +7,10 @@ middleware: (function that has access to req, res, next) - can modify req, res o
 3- Custom middleware
 
 app.use(express.static('public')) // serve static files in public folder
+
+CRUD operations:
+
+Create: POST
+Read: GET
+Update: PUT
+Delete: DELETE
