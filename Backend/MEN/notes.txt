@@ -1,0 +1,9 @@
+view engine in express is set to ejs
+
+middleware: (function that has access to req, res, next) - can modify req, res objects, end response cycle, call next middleware in stack
+
+1- Built-in middleware
+2- Third-party middleware
+3- Custom middleware
+
+app.use(express.static('public')) // serve static files in public folder
